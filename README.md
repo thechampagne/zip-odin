@@ -12,10 +12,10 @@ import "zip"
 
 main :: proc() {
     zip_file := zip.open("odin.zip", 6, 'w')
-	defer zip.close(zip_file)
+    defer zip.close(zip_file)
 
     zip.entry_open(zip_file, "test")
-	defer zip.entry_close(zip_file)
+    defer zip.entry_close(zip_file)
 
     content := "test content"
     zip.entry_write(zip_file, &content, len(content))
